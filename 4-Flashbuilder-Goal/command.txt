@@ -1,0 +1,1 @@
+mvn org.sonatype.flexmojos:flexmojos-maven-plugin:3.9:flashbuilder
