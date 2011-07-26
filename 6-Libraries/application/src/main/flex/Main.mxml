@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" width="640" height="480" preinitialize="onPreInit(event)">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			private const signal:StringSignal = new StringSignal();
+			private const math:BasicMath = new BasicMath(Math.PI);
+			
+			protected function onClick(event:MouseEvent):void
+			{
+				signal.dispatch("PI * 3 = " + math.multiply(3));
+			}
+			
+			protected function onPreInit(event:FlexEvent):void
+			{
+				signal.add(function(value:String):void
+					{
+						label.text = value;
+					});
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<s:Sequence repeatCount="0" id="animation">	
+			<s:AnimateColor colorFrom="blue" colorTo="green" duration="5000" />
+			<s:AnimateColor colorFrom="green" colorTo="red" duration="5000" />
+			<s:AnimateColor colorFrom="red" colorTo="black" duration="5000" />
+		</s:Sequence>
+	</fx:Declarations>
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" />
+	</s:layout>
+	<s:Label id="label" text="Hello Homer." fontSize="50" creationComplete="animation.play([label])" />
+	
+	<s:Button click="onClick(event)" label="Dispatch" />
+</s:Application>
