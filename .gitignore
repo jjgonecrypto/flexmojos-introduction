@@ -1,0 +1,12 @@
+
+3-Dependencies/target/test-classes/TestRunner.swf
+
+3-Dependencies/target/flexmojos-dependencies-0.1-SNAPSHOT-link-report.xml
+
+3-Dependencies/target/flexmojos-dependencies-0.1-SNAPSHOT-size-report.xml
+
+3-Dependencies/target/*
+
+3-Dependencies/target/surefire-reports/TEST-TestBasicMath.test_multiply.TestBasicMath.xml
+
+3-Dependencies/target/test-classes/TestRunner-size-report.xml
