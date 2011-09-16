@@ -28,10 +28,10 @@
        
 				<configuration>
 					<sourceFile>./Main.mxml</sourceFile>
-					<swfVersion>12</swfVersion>
-						<themes>
-	<theme>${settings.localRepository}/com/adobe/flex/framework/spark/${flex.version}/spark-${flex.version}-theme.css</theme>
-						</themes>
+					<swfVersion>11</swfVersion>
+					<compilerWarnings>
+	                	<warn-no-constructor>false</warn-no-constructor>
+					</compilerWarnings>
                 </configuration>
 				<dependencies>
 					<dependency>
@@ -46,13 +46,25 @@
 	</build>
 	
 	<dependencies>
+		<!-- Flex framework dependency -->
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
 			<artifactId>flex-framework</artifactId>
 			<version>${flex.version}</version>
 			<type>pom</type>
 		</dependency>
+		
+		<!-- Spark theme dependency -->
+		<dependency>
+		  <groupId>com.adobe.flex.framework</groupId>
+		  <artifactId>spark</artifactId>
+		  <version>${flex.version}</version>
+		  <classifier>theme</classifier>
+		  <type>css</type>
+		  <scope>theme</scope>
+		</dependency>
 	
+		<!-- Flexunit dependency -->
 		<dependency>
 		  <groupId>com.adobe.flexunit</groupId>
 		  <artifactId>flexunit</artifactId>
@@ -61,7 +73,7 @@
 		  <scope>test</scope>
 		</dependency>
 		
-		<!-- UPDATED -->
+		<!-- Some third party dependency -->
 		<dependency>
 			<groupId>org.osflash</groupId>
 			<artifactId>as3-signals</artifactId>
