@@ -1,4 +1,4 @@
-package
+package org.justinjmoses.flexmojos_intro.dependencies
 {
 	import org.osflash.signals.Signal;
 	
