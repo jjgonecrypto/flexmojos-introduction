@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
 			   xmlns:s="library://ns.adobe.com/flex/spark" 
-			   xmlns:mx="library://ns.adobe.com/flex/mx" preinitialize="onPreInit(event)" xmlns:signals="org.osflash.signals.*" xmlns:ns="org.justinjmoses.flexmojos_intro.dependencies.*">
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   preinitialize="onPreInit(event)" xmlns:signals="org.osflash.signals.*"
+			   >
 	
 	<fx:Script>
 		<![CDATA[
-			import org.justinjmoses.flexmojos_intro.dependencies.StringSignal;
 			import mx.events.FlexEvent;
+			
+			import org.justinjmoses.flexmojos_intro.dependencies.RandomCity;
 			
 			protected function onClick(event:MouseEvent):void
 			{
-				stringSignal.dispatch("Santiago, Chile.");
+				signal.dispatch(RandomCity.next);
 			}
 			
 			protected function onPreInit(event:FlexEvent):void
 			{
-				stringSignal.add(function(value:String):void
+				signal.add(function(value:String):void
 					{
 						label.text = value;
 					});
 			}
-			
 		]]>
 	</fx:Script>
 	
 	<fx:Declarations>
-		<ns:StringSignal id="stringSignal" />
+		<signals:Signal id="signal" />
 		
 		<s:Sequence repeatCount="0" id="animation">	
-			<s:AnimateColor colorFrom="blue" colorTo="green" duration="5000" />
-			<s:AnimateColor colorFrom="green" colorTo="red" duration="5000" />
-			<s:AnimateColor colorFrom="red" colorTo="black" duration="5000" />
+			<s:AnimateColor colorFrom="blue" colorTo="green" duration="3000" />
+			<s:AnimateColor colorFrom="green" colorTo="red" duration="3000" />
+			<s:AnimateColor colorFrom="red" colorTo="black" duration="3000" />
 		</s:Sequence>
 	</fx:Declarations>
 	<s:layout>
