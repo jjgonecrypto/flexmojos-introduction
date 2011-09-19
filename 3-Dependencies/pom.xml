@@ -31,14 +31,6 @@
 	                	<warn-no-constructor>false</warn-no-constructor>
 					</compilerWarnings>
                 </configuration>
-				<dependencies>
-					<dependency>
-						<groupId>com.adobe.flex</groupId>
-						<artifactId>compiler</artifactId>
-						<version>${flex.version}</version>
-						<type>pom</type>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
