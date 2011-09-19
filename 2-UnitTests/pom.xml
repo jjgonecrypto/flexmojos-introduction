@@ -7,7 +7,7 @@
 	<groupId>org.justinjmoses.flexmojos-introduction</groupId>
 	<artifactId>flexmojos-unittests</artifactId>
 	<name>Flexmojos UnitTest Example</name>
-	<version>0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>swf</packaging>
 
 	<build>
@@ -25,16 +25,8 @@
        
 				<configuration>
 					<sourceFile>./Main.mxml</sourceFile>
-					<swfVersion>12</swfVersion>
+					<swfVersion>11</swfVersion>
                 </configuration>
-				<dependencies>
-					<dependency>
-						<groupId>com.adobe.flex</groupId>
-						<artifactId>compiler</artifactId>
-						<version>4.5.1.21328</version>
-						<type>pom</type>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
