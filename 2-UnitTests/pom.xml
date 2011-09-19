@@ -13,19 +13,18 @@
 	<build>
 		
 		<!-- UPDATED -->
-        <sourceDirectory>src/main</sourceDirectory>
-        <testSourceDirectory>src/test</testSourceDirectory>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
     
         <plugins>
 			<plugin>
 				<groupId>org.sonatype.flexmojos</groupId>
 				<artifactId>flexmojos-maven-plugin</artifactId>
-				<version>4.0-RC1</version>
+				<version>4.0-RC2</version>
                 <extensions>true</extensions>
        
 				<configuration>
 					<sourceFile>./Main.mxml</sourceFile>
-					<swfVersion>11</swfVersion>
                 </configuration>
 			</plugin>
 		</plugins>
