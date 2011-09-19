@@ -20,8 +20,8 @@
 	
 	<build>
 		
-        <sourceDirectory>src/main</sourceDirectory>
-        <testSourceDirectory>src/test</testSourceDirectory>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
     
         <plugins>
 			<plugin>
@@ -32,6 +32,9 @@
        
 				<configuration>
 					<sourceFile>./Main.mxml</sourceFile>
+					<compilerWarnings>
+	                	<warn-no-constructor>false</warn-no-constructor>
+					</compilerWarnings>
                 </configuration>
 			</plugin>
 		</plugins>

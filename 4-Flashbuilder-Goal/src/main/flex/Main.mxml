@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   >
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import org.justinjmoses.flexmojos_intro.RandomCity;
+			
+			protected const cities:RandomCity = new RandomCity();
+			
+			protected function onClick(event:MouseEvent):void
+			{
+				label.text = cities.next;
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:Sequence repeatCount="0" id="animation">	
+			<s:AnimateColor colorFrom="blue" colorTo="green" duration="3000" />
+			<s:AnimateColor colorFrom="green" colorTo="red" duration="3000" />
+			<s:AnimateColor colorFrom="red" colorTo="black" duration="3000" />
+		</s:Sequence>
+	</fx:Declarations>
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" />
+	</s:layout>
+	<s:Label id="label" text="Where in the world is Carmen Sandiago?" fontSize="22" creationComplete="animation.play([label])" />
+	
+	<s:Button click="onClick(event)" label="Answer" />
+</s:Application>
