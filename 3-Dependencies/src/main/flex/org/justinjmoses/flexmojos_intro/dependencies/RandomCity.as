@@ -2,7 +2,7 @@ package org.justinjmoses.flexmojos_intro.dependencies
 {
 	public class RandomCity
 	{
-		private static const cities:Array = 
+		private const cities:Array = 
 			[	'Santiago, Chile', 
 				'Sydney, Australia', 
 				'San Francisco, US', 
@@ -17,7 +17,7 @@ package org.justinjmoses.flexmojos_intro.dependencies
 				'Moscow, Russia' 
 			]
 			
-		public static function get next():String
+		public function get next():String
 		{
 			const index:int = Math.round(Math.random() * cities.length)
 			

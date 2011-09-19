@@ -11,10 +11,7 @@
 			
 			import org.justinjmoses.flexmojos_intro.dependencies.RandomCity;
 			
-			protected function onClick(event:MouseEvent):void
-			{
-				signal.dispatch(RandomCity.next);
-			}
+			protected const cities:RandomCity = new RandomCity();
 			
 			protected function onPreInit(event:FlexEvent):void
 			{
@@ -22,6 +19,11 @@
 					{
 						label.text = value;
 					});
+			}
+
+			protected function onClick(event:MouseEvent):void
+			{
+				signal.dispatch(cities.next);
 			}
 		]]>
 	</fx:Script>
@@ -40,5 +42,5 @@
 	</s:layout>
 	<s:Label id="label" text="Where in the world is Carmen Sandiago?" fontSize="22" creationComplete="animation.play([label])" />
 	
-	<s:Button click="onClick(event)" label="Dispatch" />
+	<s:Button click="onClick(event)" label="Answer" />
 </s:Application>
