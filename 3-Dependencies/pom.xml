@@ -43,25 +43,6 @@
 			<type>pom</type>
 		</dependency>
 		
-		<!-- Spark theme dependency (No longer required in RC2) 
-		<dependency>
-		  <groupId>com.adobe.flex.framework</groupId>
-		  <artifactId>spark</artifactId>
-		  <version>${flex.version}</version>
-		  <classifier>theme</classifier>
-		  <type>css</type>
-		  <scope>theme</scope>
-		</dependency>-->
-	
-		<!-- Flexunit dependency -->
-		<dependency>
-		  <groupId>com.adobe.flexunit</groupId>
-		  <artifactId>flexunit</artifactId>
-		  <version>4.0-rc-1</version>
-		  <type>swc</type>
-		  <scope>test</scope>
-		</dependency>
-		
 		<!-- Some third party dependency -->
 		<dependency>
 			<groupId>org.osflash</groupId>
