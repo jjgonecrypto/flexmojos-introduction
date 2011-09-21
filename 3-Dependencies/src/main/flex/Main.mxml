@@ -9,7 +9,7 @@
 		<![CDATA[
 			import mx.events.FlexEvent;
 			
-			import org.justinjmoses.flexmojos_intro.dependencies.RandomCity;
+			import org.justinjmoses.flexmojos_intro.RandomCity;
 			
 			protected const cities:RandomCity = new RandomCity();
 			

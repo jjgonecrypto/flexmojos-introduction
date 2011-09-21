@@ -1,4 +1,4 @@
-package org.justinjmoses.flexmojos_intro.dependencies
+package org.justinjmoses.flexmojos_intro
 {
 	public class RandomCity
 	{
