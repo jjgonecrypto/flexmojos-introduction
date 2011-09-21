@@ -1,3 +1,0 @@
-install via: > mvn clean install
-
-this will create the "target" folder in both projects. to run the application, go to the "application/target" folder and run the containing SWF..
