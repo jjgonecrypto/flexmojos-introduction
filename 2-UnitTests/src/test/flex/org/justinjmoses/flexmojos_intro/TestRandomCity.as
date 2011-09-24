@@ -1,5 +1,7 @@
 package org.justinjmoses.flexmojos_intro
 {
+	import org.flexunit.assertThat;
+
 	public class TestRandomCity
 	{
 		protected var cities:RandomCity;
@@ -14,9 +16,7 @@ package org.justinjmoses.flexmojos_intro
 		public function testGetNext():void
 		{
 			for (var i:int = 1; i < 100; i++)
-			{
-				var city:String = cities.next;	
-			}
+				assertThat(cities.next);
 		}
 		
 		[After]
