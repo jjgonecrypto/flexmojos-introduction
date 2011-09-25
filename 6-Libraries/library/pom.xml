@@ -5,14 +5,14 @@
 
 	<!-- UPDATE -->
 	<parent>
-		<groupId>org.justinjmoses.flexmojos-introduction</groupId>
-		<artifactId>flexmojos-libraries</artifactId>
+		<groupId>org.justinjmoses.flexmojos-introduction.libraries-example</groupId>
+		<artifactId>parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.justinjmoses.flexmojos-introduction</groupId>
-	<artifactId>flexmojos-libraries-library</artifactId>
+	<groupId>org.justinjmoses.flexmojos-introduction.libraries-example</groupId>
+	<artifactId>library</artifactId>
 	<name>Flexmojos Libraries Example - SWC Library</name>
 	<packaging>swc</packaging>
 
