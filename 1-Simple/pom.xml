@@ -21,6 +21,7 @@
        
 				<configuration>
 					<sourceFile>./Main.mxml</sourceFile>
+					<debug>true</debug>  
                 </configuration>
 			</plugin>
 		</plugins>
