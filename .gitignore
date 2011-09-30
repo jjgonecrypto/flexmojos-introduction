@@ -1,8 +1,19 @@
 
-*/target/*
-
-*/target/*/*
 
 */*/target/*
 
 */*/target/*/*
+
+.metadata
+
+*/bin
+
+*/target
+
+*/html-template
+
+*/bin-debug
+
+*/bin-release
+
+.*
