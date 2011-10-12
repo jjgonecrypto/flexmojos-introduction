@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<profiles>
+		<profile>
+			<id>internal-nexus</id>
+		
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		
+			<repositories>
+		      <repository>
+		         <id>internal-repository</id>
+		         <url>http://localhost:8081/nexus/content/groups/public</url>
+		      </repository>
+		   </repositories>
+
+		   <pluginRepositories>
+		      <pluginRepository>
+		         <id>internal-plugin-repository</id>
+		         <url>http://localhost:8081/nexus/content/groups/public</url>
+		      </pluginRepository>
+		   </pluginRepositories>
+		</profile>
+	</profiles>
+	
+</settings>

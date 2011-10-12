@@ -66,20 +66,5 @@
 		</dependency>
 
 	</dependencies>
-	
-	<repositories>
-      <repository>
-         <id>internal-repository</id>
-         <url>http://localhost:8081/nexus/content/groups/public</url>
-      </repository>
-   </repositories>
-
-   <pluginRepositories>
-      <pluginRepository>
-         <id>internal-plugin-repository</id>
-         <url>http://localhost:8081/nexus/content/groups/public</url>
-      </pluginRepository>
-   </pluginRepositories>
-   
 
 </project>
