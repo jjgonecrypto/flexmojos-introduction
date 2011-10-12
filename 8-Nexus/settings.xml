@@ -3,6 +3,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	
+	<!-- Option 1: Using profiles -->
 	<profiles>
 		<profile>
 			<id>internal-nexus</id>
@@ -26,5 +28,15 @@
 		   </pluginRepositories>
 		</profile>
 	</profiles>
+	
+	
+	<!-- Option 2: Mirroring -->
+	<!--mirrors>
+		<mirror>
+			<id>internal-repository</id>
+			<url>http://localhost:8081/nexus/content/groups/public</url>
+			<mirrorOf>*</mirrorOf>
+		</mirror>
+	</mirrors-->
 	
 </settings>
