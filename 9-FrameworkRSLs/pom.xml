@@ -19,6 +19,8 @@
 	
 	<properties>
 		<flex.sdk.version>4.5.1.21328</flex.sdk.version>
+		<flex.tlf.version>2.0.0.232</flex.tlf.version>
+		<flex.osmf.version>1.0.0.16316</flex.osmf.version>
 		<flexmojos.version>4.0-RC2</flexmojos.version>
 		<flexunit.version>4.0-rc-1</flexunit.version>
 		<as3-signals.version>0.8</as3-signals.version>
@@ -37,6 +39,13 @@
 					<compilerWarnings>
 						<warnNoConstructor>false</warnNoConstructor>
 					</compilerWarnings>
+					<policyFileUrls>
+					    <url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
+					</policyFileUrls>
+					<rslUrls>
+					   <url>http://fpdownload.adobe.com/pub/{extension}/flex/${flex.sdk.version}/{artifactId}_{version}.{extension}</url> 	 
+					   <url>http://fpdownload.adobe.com/pub/{extension}/tlf/${flex.tlf.version}/{artifactId}_${flex.tlf.version}.{extension}</url>
+					</rslUrls>
                 </configuration>
 			</plugin>
 		</plugins>
@@ -55,6 +64,14 @@
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
 			<artifactId>charts</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>textLayout</artifactId>
 			<version>${flex.sdk.version}</version>
 			<type>swc</type>
 			<scope>caching</scope>
@@ -116,13 +133,7 @@
 			<scope>caching</scope>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>textLayout</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
+		
 	
 		<!-- Fill in the missing dependencies with the standard list -->
 		<dependency> 
