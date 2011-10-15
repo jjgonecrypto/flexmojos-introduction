@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.justinjmoses.flexmojos-introduction.framework-rsls</groupId>
+	<artifactId>parent</artifactId>
+	<name>Flexmojos Framework RSLs Example</name>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>library</module>
+		<module>application</module>
+	</modules>
+	
+	
+	<properties>
+		<flex.sdk.version>4.5.1.21328</flex.sdk.version>
+		<flexmojos.version>4.0-RC2</flexmojos.version>
+		<flexunit.version>4.0-rc-1</flexunit.version>
+		<as3-signals.version>0.8</as3-signals.version>
+	</properties>
+	
+	<build>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+                <extensions>true</extensions>
+       
+				<configuration>
+					<compilerWarnings>
+						<warnNoConstructor>false</warnNoConstructor>
+					</compilerWarnings>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<!-- Provide the collection of framework dependencies that we want as RSLs -->
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>advancedgrids</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>charts</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>framework</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>mx</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>osmf</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>rpc</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>spark</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>sparkskins</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>spark_dmv</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>textLayout</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+	
+		<!-- Fill in the missing dependencies with the standard list -->
+		<dependency> 
+		    <groupId>com.adobe.flex.framework</groupId> 
+            <artifactId>flex-framework</artifactId> 
+            <version>${flex.sdk.version}</version> 
+            <type>pom</type> 
+         </dependency>
+		
+		<!-- Remaining dependencies -->
+		<dependency>
+		  <groupId>com.adobe.flexunit</groupId>
+		  <artifactId>flexunit</artifactId>
+		  <version>${flexunit.version}</version>
+		  <type>swc</type>
+		  <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.osflash</groupId>
+			<artifactId>as3-signals</artifactId>
+			<version>${as3-signals.version}</version>
+			<type>swc</type>
+		</dependency>
+
+	</dependencies>
+	
+	<repositories>
+      <repository>
+         <id>flex-mojos-repository</id>
+         <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+      </repository>
+   </repositories>
+   <pluginRepositories>
+      <pluginRepository>
+         <id>flex-mojos-plugin-repository</id>
+         <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+      </pluginRepository>
+   </pluginRepositories>
+
+</project>
