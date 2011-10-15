@@ -40,11 +40,17 @@
 						<warnNoConstructor>false</warnNoConstructor>
 					</compilerWarnings>
 					<policyFileUrls>
+						<!--- cross domain policy for all RSLs to load them -->
 					    <url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
 					</policyFileUrls>
 					<rslUrls>
+					   <!-- URL for most Flex framework RSLs -->
 					   <url>http://fpdownload.adobe.com/pub/{extension}/flex/${flex.sdk.version}/{artifactId}_{version}.{extension}</url> 	 
+					   
+					   <!-- Special URL for Text Layout Framework -->
 					   <url>http://fpdownload.adobe.com/pub/{extension}/tlf/${flex.tlf.version}/{artifactId}_${flex.tlf.version}.{extension}</url>
+					
+					   <!-- Special URL for OSMF RSL -->
 				   	   <url>http://fpdownload.adobe.com/pub/{extension}/flex/${flex.sdk.version}/{artifactId}_${flex.osmf.version}.{extension}</url> 	 
 					</rslUrls>
                 </configuration>
