@@ -55,30 +55,6 @@
 		<!-- Provide the collection of framework dependencies that we want as RSLs -->
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>advancedgrids</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>charts</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>textLayout</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
 			<artifactId>framework</artifactId>
 			<version>${flex.sdk.version}</version>
 			<type>swc</type>
@@ -87,23 +63,7 @@
 		
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>mx</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>osmf</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>rpc</artifactId>
+			<artifactId>textLayout</artifactId>
 			<version>${flex.sdk.version}</version>
 			<type>swc</type>
 			<scope>caching</scope>
@@ -127,15 +87,53 @@
 		
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>rpc</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>charts</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
 			<artifactId>spark_dmv</artifactId>
 			<version>${flex.sdk.version}</version>
 			<type>swc</type>
 			<scope>caching</scope>
 		</dependency>
 		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>osmf</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
 		
-	
-		<!-- Fill in the missing dependencies with the standard list -->
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>mx</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>advancedgrids</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<!-- Fill in the remaining Flex dependencies with the standard list -->
 		<dependency> 
 		    <groupId>com.adobe.flex.framework</groupId> 
             <artifactId>flex-framework</artifactId> 
