@@ -43,7 +43,7 @@
 					    <url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
 					</policyFileUrls>
 					<rslUrls>
-					   <url>http://fpdownload.adobe.com/pub/{extension}/flex/${flex.sdk.version}/{artifactId}_{version}.{extension}</url> 	 
+					   <url>http://fpdownload.adobe.com/pub/{extension}/flex/{version}/{artifactId}_{version}.{extension}</url> 	 
 					   <url>http://fpdownload.adobe.com/pub/{extension}/tlf/${flex.tlf.version}/{artifactId}_${flex.tlf.version}.{extension}</url>
 					</rslUrls>
                 </configuration>
