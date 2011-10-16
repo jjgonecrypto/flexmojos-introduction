@@ -7,7 +7,9 @@
 	
 	<fx:Script>
 		<![CDATA[
+			import mx.controls.Alert;
 			import mx.events.FlexEvent;
+			import mx.events.ModuleEvent;
 			
 			import org.justinjmoses.flexmojos_intro.RandomCity;
 			
@@ -28,12 +30,18 @@
 				signal.dispatch(cities.next);
 			}
 			
-			protected function onLoadModule():void
+			protected function onLoadModule(path:String):void
 			{
+				container.removeAllElements();
 				const loader:ModuleLoader = new ModuleLoader();
-				loader.url = "MyModule.swf";
+				loader.url = path + "MyModule.swf";
 				loader.applicationDomain = new ApplicationDomain(ApplicationDomain.currentDomain);
-				addElement(loader);
+				loader.addEventListener(ModuleEvent.ERROR, function(evt:ModuleEvent):void
+				{
+					Alert.show(evt.errorText);
+					loader.removeEventListener(ModuleEvent.ERROR, arguments.callee);
+				});
+				container.addElement(loader);
 			}
 		]]>
 	</fx:Script>
@@ -54,6 +62,10 @@
 	
 	<s:Button click="onClick(event)" label="Answer" />
 	
-	<s:Button click="onLoadModule()" label="Load Module" />
+	<s:HGroup gap="10">
+		<s:Button click="onLoadModule('')" label="Load Module from this POM" />
+		<s:Button click="onLoadModule('../../module/target/')" label="Load Module from other project" />
+	</s:HGroup>
 	
+	<s:Group width="200" height="200" id="container" />
 </s:Application>
