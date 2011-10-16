@@ -35,6 +35,9 @@
 							<finalName>MyModule</finalName>
 						</module>
 					</modules>
+					<!-- This ensures we keep the link report of the application in our repo so we can use it for modules to avoid them 
+					compiling in the same classes --> 
+					<linkReportAttach>true</linkReportAttach>
                 </configuration>
 			</plugin>
 		</plugins>

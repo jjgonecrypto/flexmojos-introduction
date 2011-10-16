@@ -36,94 +36,14 @@
 	</build>
 	
 	<dependencies>
-		
+		<!-- This ensures the module won't recompile in any classes already existing within the application -->
 		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>framework</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>application</artifactId>
+			<version>${project.version}</version>
+			<type>xml</type>
+			<classifier>link-report</classifier>
 		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>textLayout</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>spark</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>sparkskins</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>rpc</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>charts</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>spark_dmv</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>osmf</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>mx</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>advancedgrids</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>swc</type>
-			<scope>caching</scope>
-		</dependency>
-		
-		<!-- Fill in the remaining Flex dependencies with the standard list -->
-		<dependency> 
-		    <groupId>com.adobe.flex.framework</groupId> 
-            <artifactId>flex-framework</artifactId> 
-            <version>${flex.sdk.version}</version> 
-            <type>pom</type> 
-         </dependency>
 		
 	</dependencies>
 	
