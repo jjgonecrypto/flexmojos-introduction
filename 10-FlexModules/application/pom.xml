@@ -31,7 +31,7 @@
 					<modules>
 						<module>
 							<sourceFile>MyModule.mxml</sourceFile>
-							<optimize>false</optimize>
+							<optimize>true</optimize>
 							<finalName>MyModule</finalName>
 						</module>
 					</modules>

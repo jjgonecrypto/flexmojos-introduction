@@ -39,8 +39,7 @@
 				loader.addEventListener(ModuleEvent.ERROR, function(evt:ModuleEvent):void
 				{
 					Alert.show(evt.errorText);
-					loader.removeEventListener(ModuleEvent.ERROR, arguments.callee);
-				});
+				}, false, 0, true);
 				container.addElement(loader);
 			}
 		]]>

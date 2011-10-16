@@ -36,15 +36,95 @@
 	</build>
 	
 	<dependencies>
-		<!-- Internal dependency -->
+		
 		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>library</artifactId>
-			<version>${project.version}</version>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>framework</artifactId>
+			<version>${flex.sdk.version}</version>
 			<type>swc</type>
-			<scope>external</scope> <!-- As this module will be loaded by the main application which will merge in this library, we don't need it here -->
+			<scope>caching</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>textLayout</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>spark</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>sparkskins</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>rpc</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>charts</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>spark_dmv</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>osmf</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>mx</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>advancedgrids</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<!-- Fill in the remaining Flex dependencies with the standard list -->
+		<dependency> 
+		    <groupId>com.adobe.flex.framework</groupId> 
+            <artifactId>flex-framework</artifactId> 
+            <version>${flex.sdk.version}</version> 
+            <type>pom</type> 
+         </dependency>
+		
 	</dependencies>
 	
-
 </project>
