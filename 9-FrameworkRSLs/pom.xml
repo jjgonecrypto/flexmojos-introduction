@@ -40,8 +40,10 @@
 						<warnNoConstructor>false</warnNoConstructor>
 					</compilerWarnings>
 					<policyFileUrls>
-						<!--- cross domain policy for all RSLs to load them -->
+						<!--- cross domain policy for each RSL entry -->
 					    <url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
+						<url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
+						<url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
 					</policyFileUrls>
 					<rslUrls>
 					   <!-- URL for most Flex framework RSLs -->

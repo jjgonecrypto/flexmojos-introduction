@@ -11,6 +11,7 @@
 			
 			import org.justinjmoses.flexmojos_intro.RandomCity;
 			
+			import org.osmf.utils.Version;
 			protected const cities:RandomCity = new RandomCity();
 			
 			protected function onPreInit(event:FlexEvent):void
@@ -25,6 +26,12 @@
 			{
 				signal.dispatch(cities.next);
 			}
+			
+			import org.osmf.layout.ScaleMode;
+
+			var d:ScaleMode = new ScaleMode();
+			
+			trace(Version.version);
 		]]>
 	</fx:Script>
 	
