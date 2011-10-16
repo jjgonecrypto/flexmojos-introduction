@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- UPDATE -->
+	<parent>
+		<groupId>org.justinjmoses.flexmojos-introduction.flexmodules-example</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>module</artifactId>
+	<name>Flexmojos Flex Module Example - Module</name>
+	<packaging>swf</packaging>
+
+	<build>
+		
+        <sourceDirectory>src/main/flex</sourceDirectory>
+    
+        <plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+                <extensions>true</extensions>
+       
+				<configuration>
+					<sourceFile>./MyModule.mxml</sourceFile>
+					<optimize>true</optimize>
+					<finalName>MyModule</finalName>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<!-- Internal dependency -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>library</artifactId>
+			<version>${project.version}</version>
+			<type>swc</type>
+			<scope>external</scope> <!-- As this module will be loaded by the main application which will merge in this library, we don't need it here -->
+		</dependency>
+	</dependencies>
+	
+
+</project>
