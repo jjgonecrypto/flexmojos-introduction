@@ -36,8 +36,8 @@
 	<dependencies>
 		<!-- UPDATED -->   <!-- Internal dependency -->
 		<dependency>
-			<groupId>org.justinjmoses.flexmojos-introduction</groupId>
-			<artifactId>flexmojos-libraries-library</artifactId>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>library</artifactId>
 			<version>${project.version}</version>
 			<type>swc</type>
 		</dependency>

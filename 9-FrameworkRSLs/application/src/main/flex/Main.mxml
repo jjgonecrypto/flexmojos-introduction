@@ -20,7 +20,7 @@
 						label.text = value;
 					});
 			}
-
+	
 			protected function onClick(event:MouseEvent):void
 			{
 				signal.dispatch(cities.next);
