@@ -25,7 +25,14 @@
 				<artifactId>flexmojos-maven-plugin</artifactId>
 				<version>${flexmojos.version}</version>
                 <extensions>true</extensions>
-       
+       			<executions> 
+				  <execution>
+					<phase>install</phase> 
+				    <goals> 
+				      <goal>asdoc</goal> 
+				    </goals> 
+				  </execution> 
+				</executions>
 				<configuration>
 					<sourceFile>./Main.mxml</sourceFile>
                 </configuration>

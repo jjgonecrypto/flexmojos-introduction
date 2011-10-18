@@ -34,14 +34,7 @@
 				<artifactId>flexmojos-maven-plugin</artifactId>
 				<version>${flexmojos.version}</version>
                 <extensions>true</extensions>
-       			<executions> 
-				  <execution>
-					<phase>install</phase> 
-				    <goals> 
-				      <goal>asdoc</goal> 
-				    </goals> 
-				  </execution> 
-				</executions>
+       			
 				<configuration>
 					<!-- Ensure asdocs from all maven modules will be aggregated --> 
 					<aggregate>true</aggregate>
