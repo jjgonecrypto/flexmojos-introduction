@@ -45,6 +45,7 @@
 			<artifactId>library</artifactId>
 			<version>${project.version}</version>
 			<type>swc</type>
+			<scope>rsl</scope>
 		</dependency>
 		
 		<dependency>
