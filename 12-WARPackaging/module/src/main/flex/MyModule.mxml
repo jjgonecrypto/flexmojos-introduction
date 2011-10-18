@@ -6,6 +6,6 @@
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
 	
-	<s:Label text="The module within its own project (and with it's own POM)." top="5" left="5" />
+	<s:Label text="I be a module." top="0" left="0" />
 		
 </s:Module>
