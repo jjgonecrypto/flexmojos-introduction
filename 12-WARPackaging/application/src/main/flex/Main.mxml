@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   preinitialize="onPreInit(event)" xmlns:signals="org.osflash.signals.*"
+			   >
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			import mx.events.ModuleEvent;
+			
+			import org.justinjmoses.flexmojos_intro.RandomCity;
+			
+			import spark.modules.ModuleLoader;
+			
+			protected const cities:RandomCity = new RandomCity();
+			
+			protected function onPreInit(event:FlexEvent):void
+			{
+				signal.add(function(value:String):void
+					{
+						label.text = value;
+					});
+			}
+
+			protected function onClick(event:MouseEvent):void
+			{
+				signal.dispatch(cities.next);
+			}
+			
+			protected function onLoadModule(path:String):void
+			{
+				container.removeAllElements();
+				const loader:ModuleLoader = new ModuleLoader();
+				loader.url = path + "MyModule.swf";
+				loader.applicationDomain = new ApplicationDomain(ApplicationDomain.currentDomain);
+				loader.addEventListener(ModuleEvent.ERROR, function(evt:ModuleEvent):void
+				{
+					Alert.show(evt.errorText);
+				}, false, 0, true);
+				container.addElement(loader);
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<signals:Signal id="signal" />
+		
+		<s:Sequence repeatCount="0" id="animation">	
+			<s:AnimateColor colorFrom="blue" colorTo="green" duration="3000" />
+			<s:AnimateColor colorFrom="green" colorTo="red" duration="3000" />
+			<s:AnimateColor colorFrom="red" colorTo="black" duration="3000" />
+		</s:Sequence>
+	</fx:Declarations>
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" />
+	</s:layout>
+	<s:Label id="label" text="Where in the world is Carmen Sandiago?" fontSize="22" creationComplete="animation.play([label])" />
+	
+	<s:Button click="onClick(event)" label="Answer" />
+	
+	<s:HGroup gap="10">
+		<s:Button click="onLoadModule('')" label="Load Module from this POM" />
+		<s:Button click="onLoadModule('../../module/target/')" label="Load Module from other project" />
+	</s:HGroup>
+	
+	<s:Group width="200" height="200" id="container" />
+</s:Application>

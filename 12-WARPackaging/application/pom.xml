@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>org.justinjmoses.flexmojos-introduction.war-example</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>application</artifactId>
+	<name>Flexmojos WAR Example - Application</name>
+	<packaging>swf</packaging>
+
+	<build>
+		
+        <sourceDirectory>src/main/flex</sourceDirectory>
+    
+        <plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+                <extensions>true</extensions>
+       
+				<configuration>
+					<sourceFile>./Main.mxml</sourceFile>
+	
+					<!-- This ensures we keep the link report of the application in our repo so we can use it for modules to avoid them 
+					compiling in the same classes --> 
+					<linkReportAttach>true</linkReportAttach>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<!-- Internal dependency -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>library</artifactId>
+			<version>${project.version}</version>
+			<type>swc</type>
+		</dependency>
+	</dependencies>
+	
+
+</project>
