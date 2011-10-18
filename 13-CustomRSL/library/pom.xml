@@ -26,6 +26,7 @@
 
 		        <executions>
 		          <execution>
+			        <phase>install</phase>
 		            <goals>
 				      <goal>create-rsl</goal>
 		            </goals>
