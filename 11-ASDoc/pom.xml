@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.justinjmoses.flexmojos-introduction.asdoc-example</groupId>
+	<artifactId>parent</artifactId>
+	<name>Flexmojos ASDoc Example</name>
+	<version>1.0.0-SNAPSHOT</version>
+
+
+	<!-- UPDATE -->
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>library</module>
+		<module>application</module>
+	</modules>
+	
+	
+	<properties>
+		<flex.sdk.version>4.5.1.21328</flex.sdk.version>
+		<flexmojos.version>4.0-RC2</flexmojos.version>
+		<flexunit.version>4.0-rc-1</flexunit.version>
+		<as3-signals.version>0.8</as3-signals.version>
+	</properties>
+	
+	<build>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+                <extensions>true</extensions>
+       			<executions> 
+				  <execution>
+					<phase>install</phase> 
+				    <goals> 
+				      <goal>asdoc</goal> 
+				    </goals> 
+				  </execution> 
+				</executions>
+				<configuration>
+					<!-- Ensure asdocs from all maven modules will be aggregated --> 
+					<aggregate>true</aggregate>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>flex-framework</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>pom</type>
+		</dependency>
+		
+		<dependency>
+		  <groupId>com.adobe.flexunit</groupId>
+		  <artifactId>flexunit</artifactId>
+		  <version>${flexunit.version}</version>
+		  <type>swc</type>
+		  <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.osflash</groupId>
+			<artifactId>as3-signals</artifactId>
+			<version>${as3-signals.version}</version>
+			<type>swc</type>
+		</dependency>
+
+	</dependencies>
+	
+	<repositories>
+      <repository>
+         <id>flex-mojos-repository</id>
+         <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+      </repository>
+   </repositories>
+   <pluginRepositories>
+      <pluginRepository>
+         <id>flex-mojos-plugin-repository</id>
+         <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+      </pluginRepository>
+   </pluginRepositories>
+
+</project>
