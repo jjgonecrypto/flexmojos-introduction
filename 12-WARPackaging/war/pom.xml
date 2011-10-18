@@ -14,7 +14,6 @@
 	<name>Flexmojos WAR Example - WAR</name>
 	<packaging>war</packaging>
 
-
   	<build>
 	    <plugins>
 	      <plugin>
@@ -24,15 +23,15 @@
 	        <executions>
 	          <execution>
 	            <goals>
+			      <goal>wrapper</goal>
 	              <goal>copy-flex-resources</goal>
-				  <goal>wrapper</goal>
 	            </goals>
 				<configuration>
 				   <wrapperArtifact>
 					   <groupId>${project.groupId}</groupId>
 					   <artifactId>application</artifactId>
+					   <version>${project.version}</version>
 				   </wrapperArtifact>
-                   <stripModuleArtifactInfo>true</stripModuleArtifactInfo>
 				</configuration>
 	          </execution>
 	        </executions>

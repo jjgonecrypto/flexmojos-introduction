@@ -34,7 +34,7 @@
 			{
 				container.removeAllElements();
 				const loader:ModuleLoader = new ModuleLoader();
-				loader.url = path + "MyModule.swf";
+				loader.url = path + "module-1.0.0-SNAPSHOT.swf";
 				loader.applicationDomain = new ApplicationDomain(ApplicationDomain.currentDomain);
 				loader.addEventListener(ModuleEvent.ERROR, function(evt:ModuleEvent):void
 				{
@@ -62,8 +62,7 @@
 	<s:Button click="onClick(event)" label="Answer" />
 	
 	<s:HGroup gap="10">
-		<s:Button click="onLoadModule('')" label="Load Module from this POM" />
-		<s:Button click="onLoadModule('../../module/target/')" label="Load Module from other project" />
+		<s:Button click="onLoadModule('')" label="Load Module" />
 	</s:HGroup>
 	
 	<s:Group width="200" height="200" id="container" />
