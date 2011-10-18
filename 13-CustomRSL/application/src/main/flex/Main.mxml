@@ -7,13 +7,12 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import mx.controls.Alert;
 			import mx.events.FlexEvent;
-			import mx.events.ModuleEvent;
+			import org.robotlegs.mvcs.Context;
 			
 			import org.justinjmoses.flexmojos_intro.RandomCity;
 			
-			import spark.modules.ModuleLoader;
+			protected var rlContext:Context;
 			
 			protected const cities:RandomCity = new RandomCity();
 			
@@ -23,24 +22,13 @@
 					{
 						label.text = value;
 					});
+					
+				rlContext = new Context();
 			}
 
 			protected function onClick(event:MouseEvent):void
 			{
 				signal.dispatch(cities.next);
-			}
-			
-			protected function onLoadModule():void
-			{
-				container.removeAllElements();
-				const loader:ModuleLoader = new ModuleLoader();
-				loader.url = "module.swf";
-				loader.applicationDomain = new ApplicationDomain(ApplicationDomain.currentDomain);
-				loader.addEventListener(ModuleEvent.ERROR, function(evt:ModuleEvent):void
-				{
-					Alert.show(evt.errorText);
-				}, false, 0, true);
-				container.addElement(loader);
 			}
 		]]>
 	</fx:Script>
@@ -60,10 +48,4 @@
 	<s:Label id="label" text="Where in the world is Carmen Sandiago?" fontSize="22" creationComplete="animation.play([label])" />
 	
 	<s:Button click="onClick(event)" label="Answer" />
-	
-	<s:HGroup gap="10">
-		<s:Button click="onLoadModule()" label="Load Module" />
-	</s:HGroup>
-	
-	<s:Group width="200" height="200" id="container" />
 </s:Application>
