@@ -18,16 +18,99 @@
 		<module>application</module>
 	</modules>
 	
-	
 	<properties>
-		<flex.sdk.version>4.5.1.21328</flex.sdk.version>
 		<flexmojos.version>4.0-RC2</flexmojos.version>
 		<flexunit.version>4.0-rc-1</flexunit.version>
 		<as3-signals.version>0.8</as3-signals.version>
 	</properties>
 	
-	<build>
+	<profiles>
+		<profile>
+		    <id>flex4.1</id>
+	        <properties>
+	            <flex.sdk.version>4.1.0.16076</flex.sdk.version>
+	        </properties>
+	    </profile>
+	    <profile>
+	        <id>flex4.5</id>
+			<activation>
+				<!-- Enabled automatically, but will be disabled if profiles enabled via command-line 
+				or through activeProfiles in a settings file -->
+				<activeByDefault>true</activeByDefault>
+			</activation>
+	        <properties>
+	            <flex.sdk.version>4.5.1.21328</flex.sdk.version>
+	        </properties>
+	    </profile>
 		
+		<profile>
+			<id>debug</id>
+			<activation>
+				<!-- Enabled automatically, but will be disabled if profiles enabled via command-line 
+				or through activeProfiles in a settings file -->
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<flex-debug>true</flex-debug>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>release</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<flex-debug>false</flex-debug>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>alt-flashplayer</id>
+			<activation>
+				<file>
+					<!-- Automatically enabled when the follow file exists -->
+					<exists>/usr/local/bin/flashplayer</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.flexmojos</groupId>
+						<artifactId>flexmojos-maven-plugin</artifactId>
+						<configuration>
+							<flashPlayerCommand>/usr/local/bin/flashplayer</flashPlayerCommand>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		
+		<profile>
+		    <id>xml-coverage</id>
+			<activation>
+				<os> 
+					<!-- Automatically enabled when run on a WindowsX OS -->
+					<family>windows</family>
+				</os>
+			</activation>
+		    <build>
+		        <plugins>
+		            <plugin>
+		                <groupId>org.sonatype.flexmojos</groupId>
+		                <artifactId>flexmojos-maven-plugin</artifactId>
+		                <configuration>
+		                   <coverageReportFormat>
+		                      <param>xml</param>
+		                   </coverageReportFormat>
+		                </configuration>
+		            </plugin>
+		        </plugins>
+		    </build>
+		</profile>
+	</profiles>
+	
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.sonatype.flexmojos</groupId>
@@ -37,7 +120,19 @@
        
 				<configuration>
 					<debug>${flex-debug}</debug>
+					<coverage>true</coverage>
+					<coverageReportFormat>
+			           <param>html</param>
+			     	</coverageReportFormat>  
                 </configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.adobe.flex</groupId>
+						<artifactId>compiler</artifactId>
+						<version>${flex.sdk.version}</version>
+						<type>pom</type>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
@@ -66,48 +161,6 @@
 		</dependency>
 
 	</dependencies>
-	
-	<profiles>
-		<profile>
-			<id>debug</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<flex-debug>true</flex-debug>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>release</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<flex-debug>false</flex-debug>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>alt-flashplayer</id>
-			<activation>
-				<file>
-					<exists>/usr/local/bin/flashplayer</exists>
-				</file>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.sonatype.flexmojos</groupId>
-						<artifactId>flexmojos-maven-plugin</artifactId>
-						<configuration>
-							<flashPlayerCommand>/usr/local/bin/flashplayer</flashPlayerCommand>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 	
 	<repositories>
       <repository>
