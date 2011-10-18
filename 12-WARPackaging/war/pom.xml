@@ -24,15 +24,9 @@
 	          <execution>
 		        <phase>install</phase>
 	            <goals>
-			      <goal>wrapper</goal>
 	              <goal>copy-flex-resources</goal>
 	            </goals>
 				<configuration>
-				   <wrapperArtifact>
-					   <groupId>${project.groupId}</groupId>
-					   <artifactId>application</artifactId>
-					   <version>${project.version}</version>
-				   </wrapperArtifact>
 				   <stripVersion>true</stripVersion>
 				</configuration>
 	          </execution>
