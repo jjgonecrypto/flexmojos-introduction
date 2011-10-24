@@ -23,15 +23,6 @@
 			<plugin>
 				<groupId>org.sonatype.flexmojos</groupId>
 				<artifactId>flexmojos-maven-plugin</artifactId>
-
-				<executions> 
-				  <execution>
-					<phase>install</phase> 
-				    <goals> 
-				      <goal>asdoc</goal> 
-				    </goals> 
-				  </execution> 
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
