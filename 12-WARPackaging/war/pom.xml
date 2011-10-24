@@ -22,7 +22,6 @@
  
 	        <executions>
 	          <execution>
-		        <phase>install</phase>
 	            <goals>
 	              <goal>copy-flex-resources</goal>
 	            </goals>
