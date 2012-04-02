@@ -1,1 +1,1 @@
-mvn install:install-file -Dfile=as3-signals-v0.8.swc -DgroupId=org.osflash -DartifactId=as3-signals -Dversion=0.8 -Dpackaging=swc
+mvn install:install-file -Dfile=./libs/as3-signals-v0.8.swc -DgroupId=org.osflash -DartifactId=as3-signals -Dversion=0.8 -Dpackaging=swc
