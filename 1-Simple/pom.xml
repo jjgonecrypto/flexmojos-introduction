@@ -10,19 +10,23 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>swf</packaging>
 
+  <properties>
+    <flex.sdk.version>4.5.1.21328</flex.sdk.version>
+    <flex46.sdk.version>4.6.b.23201</flex46.sdk.version>
+  </properties>
+
 	<build>
-        <sourceDirectory>src</sourceDirectory>
-        <plugins>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
 			<plugin>
 				<groupId>org.sonatype.flexmojos</groupId>
 				<artifactId>flexmojos-maven-plugin</artifactId>
 				<version>4.0-RC2</version>
-                <extensions>true</extensions>
-       
-				<configuration>
-					<sourceFile>./Main.mxml</sourceFile>
-					<debug>true</debug>  
-                </configuration>
+        <extensions>true</extensions>
+        <configuration>
+          <sourceFile>./Main.mxml</sourceFile>
+          <debug>true</debug>  
+        </configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -31,7 +35,7 @@
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
 			<artifactId>flex-framework</artifactId>
-			<version>4.5.1.21328</version>
+			<version>${flex.sdk.version}</version>
 			<type>pom</type>
 		</dependency>
 	</dependencies>

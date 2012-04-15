@@ -9,26 +9,37 @@
 		<profile>
 			<id>internal-nexus</id>
 		
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-		
-			<repositories>
-		      <repository>
-		         <id>internal-repository</id>
-		         <url>http://localhost:8081/nexus/content/groups/public</url>
-		      </repository>
-		   </repositories>
+		    <repositories>
+          <repository>
+             <id>internal-repository</id>
+             <url>http://localhost:8081/nexus/content/groups/public</url>
+             <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          </repository>
+       </repositories>
 
-		   <pluginRepositories>
-		      <pluginRepository>
-		         <id>internal-plugin-repository</id>
-		         <url>http://localhost:8081/nexus/content/groups/public</url>
-		      </pluginRepository>
-		   </pluginRepositories>
+       <pluginRepositories>
+          <pluginRepository>
+             <id>internal-plugin-repository</id>
+             <url>http://localhost:8081/nexus/content/groups/public</url>
+             <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          </pluginRepository>
+       </pluginRepositories>
+
 		</profile>
 	</profiles>
 	
+
+  <activeProfiles>
+    <activeProfile>internal-nexus</activeProfile>
+  </activeProfiles>
 	
 	<!-- Option 2: Mirroring -->
 	<!--mirrors>

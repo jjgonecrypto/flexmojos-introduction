@@ -63,7 +63,8 @@
 	
 	<s:HGroup gap="10">
 		<s:Button click="onLoadModule('')" label="Load Module from this POM" />
-		<s:Button click="onLoadModule('../../module/target/')" label="Load Module from other project" />
+		<s:Button click="onLoadModule('../../module/target/')" label="Load Module from other project's Maven build" />
+		<s:Button click="onLoadModule('../../module/bin-debug/')" label="Load Module from other project's FB build" />
 	</s:HGroup>
 	
 	<s:Group width="200" height="200" id="container" />

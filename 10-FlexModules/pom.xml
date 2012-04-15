@@ -22,6 +22,8 @@
 	
 	<properties>
 		<flex.sdk.version>4.5.1.21328</flex.sdk.version>
+		<flex.tlf.version>2.0.0.232</flex.tlf.version>
+		<flex.osmf.version>1.0.0.16316</flex.osmf.version>
 		<flexmojos.version>4.0-RC2</flexmojos.version>
 		<flexunit.version>4.0-rc-1</flexunit.version>
 		<as3-signals.version>0.8</as3-signals.version>
@@ -37,20 +39,122 @@
                 <extensions>true</extensions>
        
 				<configuration>
+					<debug>true</debug>
+					<compilerWarnings>
+						<warnNoConstructor>false</warnNoConstructor>
+					</compilerWarnings>
+					<policyFileUrls>
+						<!--- cross domain policy for each RSL entry -->
+					    <url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
+						<url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
+						<url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</url>
+					</policyFileUrls>
+					<rslUrls>
+					   <!-- URL for most Flex framework RSLs -->
+					   <url>http://fpdownload.adobe.com/pub/{extension}/flex/${flex.sdk.version}/{artifactId}_{version}.{extension}</url> 	 
+					   
+					   <!-- Special URL for Text Layout Framework -->
+					   <url>http://fpdownload.adobe.com/pub/{extension}/tlf/${flex.tlf.version}/{artifactId}_${flex.tlf.version}.{extension}</url>
 					
+					   <!-- Special URL for OSMF RSL -->
+				   	   <url>http://fpdownload.adobe.com/pub/{extension}/flex/${flex.sdk.version}/{artifactId}_${flex.osmf.version}.{extension}</url> 	 
+					</rslUrls>
                 </configuration>
 			</plugin>
 		</plugins>
 	</build>
 	
 	<dependencies>
+		<!-- Provide the collection of framework dependencies that we want as RSLs -->
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>flex-framework</artifactId>
+			<artifactId>framework</artifactId>
 			<version>${flex.sdk.version}</version>
-			<type>pom</type>
+			<type>swc</type>
+			<scope>caching</scope>
 		</dependency>
 		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>textLayout</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>spark</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>sparkskins</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>rpc</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>charts</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>spark_dmv</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>osmf</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>mx</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>advancedgrids</artifactId>
+			<version>${flex.sdk.version}</version>
+			<type>swc</type>
+			<scope>caching</scope>
+		</dependency>
+		
+		<!-- Fill in the remaining Flex dependencies with the standard list -->
+		<dependency> 
+		    <groupId>com.adobe.flex.framework</groupId> 
+            <artifactId>flex-framework</artifactId> 
+            <version>${flex.sdk.version}</version> 
+            <type>pom</type> 
+         </dependency>
+		
+		<!-- Remaining dependencies -->
 		<dependency>
 		  <groupId>com.adobe.flexunit</groupId>
 		  <artifactId>flexunit</artifactId>
@@ -67,6 +171,7 @@
 		</dependency>
 
 	</dependencies>
+	
 	
 	<repositories>
       <repository>

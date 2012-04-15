@@ -37,8 +37,8 @@
                 <extensions>true</extensions>
        
 				<configuration>
-					
-                </configuration>
+					<debug>true</debug>
+        </configuration>
 			</plugin>
 		</plugins>
 	</build>

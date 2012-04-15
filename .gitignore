@@ -1,16 +1,16 @@
 
-*/bin
+bin
 
-*/target
+target
 
 */*/target
 
-*/html-template
+html-template
 
-*/bin-debug
+bin-debug
 
-*/bin-release
+bin-release
 
 .*
 
-FlexUnitApplication.mxml
+FlexUnit*Application.mxml

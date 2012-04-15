@@ -36,7 +36,7 @@
                 <extensions>true</extensions>
        
 				<configuration>
-					
+					<debug>true</debug>
                 </configuration>
 			</plugin>
 		</plugins>
